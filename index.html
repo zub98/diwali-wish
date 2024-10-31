@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Diwali Blessings ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffd700;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diwali-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #ffd700, #ff9933, #ff4d4d) 1;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2),
+                        inset 0 0 20px rgba(255, 215, 0, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+
+        .diwali-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .diya {
+            font-size: 32px;
+            margin: 20px;
+            animation: flickerDiya 2s infinite alternate;
+        }
+
+        .rangoli {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 32px;
+            margin: 25px 0;
+            animation: rotateRangoli 10s linear infinite;
+        }
+
+        .message {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .message p {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', italic;
+            font-size: 1.2em;
+            margin-top: 40px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes flickerDiya {
+            0%, 100% { opacity: 1; text-shadow: 0 0 20px #ffd700; }
+            25% { opacity: 0.8; text-shadow: 0 0 15px #ffd700; }
+            50% { opacity: 0.9; text-shadow: 0 0 25px #ffd700; }
+            75% { opacity: 0.7; text-shadow: 0 0 10px #ffd700; }
+        }
+
+        @keyframes rotateRangoli {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .retro-glow {
+            text-shadow: 0 0 10px #ffd700,
+                         0 0 20px #ffd700,
+                         0 0 30px #ff4d4d;
+            animation: retroPulse 2s infinite;
+        }
+
+        .floating-lamp {
+            position: absolute;
+            font-size: 24px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .retro-particle {
+            position: absolute;
+            background: #ffd700;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @keyframes retroPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .vintage-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq
+        }
+
+        /* Background animations */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-diya {
+            position: absolute;
+            opacity: 0.3;
+            filter: blur(3px);
+            animation: floatAround 20s linear infinite;
+        }
+
+        .light-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, 
+                rgba(255, 215, 0, 0.1) 0%,
+                rgba(255, 153, 51, 0.05) 25%,
+                transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .mandala {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            animation: expandContract 8s ease-in-out infinite;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+        }
+
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(50px, 100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50px, 50px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes expandContract {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.5); opacity: 0.1; }
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(50); opacity: 0; }
+        }
+
+        /* Add these styles */
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            overflow-y: auto;
+            perspective: 1000px;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Update diwali-card styles */
+        .diwali-card {
+            margin: 50px auto;
+            max-width: 800px;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+
+        /* Add hover effects for interactive elements */
+        .message p {
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .message p:hover {
+            transform: translateX(10px);
+            color: #ffd700;
+        }
+
+        .diya, .rangoli {
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .diya:hover, .rangoli:hover {
+            transform: scale(1.1);
+            filter: brightness(1.5);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffd700;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="diwali-card">
+        <h1 class="title">Happy Diwali</h1>
+        <div class="diya">🪔 ✨ 🪔 ✨ 🪔</div>
+        <div class="rangoli">🎆 ✨ 🪔 ✨ 🎆</div>
+        <div class="message">
+            <p>On this auspicious festival of lights,<br>
+               May the glow of joy, prosperity, and happiness<br>
+               Illuminate your days in the year ahead</p>
+            
+            <p>जैसे दीप की रोशनी अंधेरे को दूर करती है,<br>
+               वैसे ही आपका जीवन हर दुख से दूर हो<br>
+               और खुशियों से भर जाये</p>
+            
+            <p>Let the light of the diyas guide your path,<br>
+               The warmth of rangoli fill your heart,<br>
+               And the sparkle of fireworks light up your soul</p>
+            
+            <p>May this Diwali bring you:<br>
+               ✨ Abundance of joy<br>
+               ✨ Radiance of success<br>
+               ✨ Glow of prosperity<br>
+               ✨ Sparkle of happiness</p>
+        </div>
+        <div class="rangoli">🎆 ✨ 🪔 ✨ 🎆</div>
+        <div class="signature">
+            <p>With warmest wishes and blessings,<br>
+            ✨ Zubair Alam ✨</p>
+        </div>
+        <div class="diya">🪔 ✨ 🪔 ✨ 🪔</div>
+    </div>
+
+    <script>
+        // Add sparkle effect
+        function createSparkles() {
+            const sparkles = document.createElement('div');
+            sparkles.className = 'sparkles';
+            document.body.appendChild(sparkles);
+
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.style.position = 'absolute';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.animation = 'sparkle 1.5s linear forwards';
+                sparkles.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1500);
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', createSparkles);
+
+        function createBackgroundAnimations() {
+            const bg = document.createElement('div');
+            bg.className = 'animated-bg';
+            document.body.appendChild(bg);
+
+            // Create light rays
+            const rays = document.createElement('div');
+            rays.className = 'light-rays';
+            bg.appendChild(rays);
+
+            // Create floating diyas
+            for (let i = 0; i < 10; i++) {
+                const diya = document.createElement('div');
+                diya.className = 'floating-diya';
+                diya.innerHTML = '🪔';
+                diya.style.fontSize = Math.random() * 30 + 20 + 'px';
+                diya.style.left = Math.random() * 100 + 'vw';
+                diya.style.top = Math.random() * 100 + 'vh';
+                diya.style.animationDelay = -Math.random() * 20 + 's';
+                bg.appendChild(diya);
+            }
+
+            // Create mandala patterns
+            for (let i = 0; i < 5; i++) {
+                const mandala = document.createElement('div');
+                mandala.className = 'mandala';
+                mandala.style.left = Math.random() * 100 + 'vw';
+                mandala.style.top = Math.random() * 100 + 'vh';
+                mandala.style.animationDelay = -Math.random() * 8 + 's';
+                bg.appendChild(mandala);
+            }
+
+            // Create random fireworks
+            setInterval(() => {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = Math.random() * 100 + 'vw';
+                firework.style.top = Math.random() * 100 + 'vh';
+                firework.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
+                bg.appendChild(firework);
+                setTimeout(() => firework.remove(), 2000);
+            }, 500);
+
+            // Add interactive light effect
+            document.addEventListener('mousemove', (e) => {
+                rays.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, 
+                    rgba(255, 215, 0, 0.1) 0%,
+                    rgba(255, 153, 51, 0.05) 25%,
+                    transparent 70%)`;
+            });
+        }
+
+        // Add this to your existing DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', () => {
+            createBackgroundAnimations();
+            // ... your existing initialization code ...
+        });
+
+        // Add this function for dynamic color changes
+        function updateColors() {
+            const hue = (Date.now() / 100) % 360;
+            document.documentElement.style.setProperty('--primary-color', `hsl(${hue}, 100%, 50%)`);
+            requestAnimationFrame(updateColors);
+        }
+        updateColors();
+
+        // Add particle burst on click
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework';
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                particle.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
+                particle.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.querySelector('.animated-bg').appendChild(particle);
+                setTimeout(() => particle.remove(), 2000);
+            }
+        });
+
+        // Add these functions to your existing JavaScript
+        function initializeCursorEffects() {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-follower';
+            const cursorGlow = document.createElement('div');
+            cursorGlow.className = 'cursor-glow';
+            document.body.appendChild(cursor);
+            document.body.appendChild(cursorGlow);
+
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                // Update glow position immediately
+                cursorGlow.style.left = mouseX + 'px';
+                cursorGlow.style.top = mouseY + 'px';
+            });
+
+            // Smooth cursor following
+            function updateCursor() {
+                const dx = mouseX - cursorX;
+                const dy = mouseY - cursorY;
+                
+                cursorX += dx * 0.1;
+                cursorY += dy * 0.1;
+                
+                cursor.style.transform = `translate(${cursorX - 10}px, ${cursorY - 10}px)`;
+                
+                requestAnimationFrame(updateCursor);
+            }
+            updateCursor();
+
+            // Hide cursor when leaving window
+            document.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+                cursorGlow.style.opacity = '0';
+            });
+
+            document.addEventListener('mouseenter', () => {
+                cursor.style.opacity = '1';
+                cursorGlow.style.opacity = '1';
+            });
+
+            // Add cursor effects for interactive elements
+            const interactiveElements = document.querySelectorAll('.message p, .diya, .rangoli, .title');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'scale(1.5) translate(-5px, -5px)';
+                    cursor.style.borderColor = '#ff4d4d';
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'scale(1) translate(-10px, -10px)';
+                    cursor.style.borderColor = '#ffd700';
+                });
+            });
+        }
+
+        // Add 3D tilt effect
+        function initialize3DTiltEffect() {
+            const card = document.querySelector('.diwali-card');
+            
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            // Reset transform when mouse leaves
+            document.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+            });
+        }
+
+        // Add scroll indicator
+        function addScrollIndicator() {
+            const indicator = document.createElement('div');
+            indicator.className = 'scroll-indicator';
+            indicator.innerHTML = '↓';
+            document.body.appendChild(indicator);
+
+            // Hide indicator when scrolled
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    indicator.style.opacity = '0';
+                } else {
+                    indicator.style.opacity = '1';
+                }
+            });
+
+            // Smooth scroll on click
+            indicator.addEventListener('click', () => {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCursorEffects();
+            initialize3DTiltEffect();
+            addScrollIndicator();
+            // ... your existing initialization code ...
+        });
+
+        // Add particle trail on cursor movement
+        let lastX = 0;
+        let lastY = 0;
+        document.addEventListener('mousemove', (e) => {
+            if (Math.abs(e.pageX - lastX) + Math.abs(e.pageY - lastY) > 20) {
+                createParticle(e.pageX, e.pageY);
+                lastX = e.pageX;
+                lastY = e.pageY;
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'firework';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.backgroundColor = `hsl(${Math.random() * 60 + 30}, 100%, 50%)`;
+            particle.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+            document.querySelector('.animated-bg').appendChild(particle);
+            setTimeout(() => particle.remove(), 1000);
+        }
+    </script>
+</body>
+</html>
